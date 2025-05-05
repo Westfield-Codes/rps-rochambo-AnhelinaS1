@@ -8,3 +8,30 @@
 *     d. Move to next function
 *  3. System Test finished version (does it work right in all conditions?)
 */
+/*function main plays a round of RPS and finds and show the winner.
+*@param: none
+*return:none
+*/
+    function main(){
+    let u = "";
+    let c = "";
+    while (u==c){
+    u = userTurn();
+    c = cpuTurn();
+    if (u==c)alert("we both choose"+c);
+    }
+    let winner = findWinner(u,c);
+    alert("You choce "+ u + " and I chose " + c + " so " + winner + " won !");
+    }
+    function userTurn(){
+        return "r";
+
+    }
+
+    function cpuTurn(){
+        return "p";
+    }
+
+    function findWinner(){
+        return "I";
+    }
