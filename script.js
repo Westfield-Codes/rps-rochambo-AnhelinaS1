@@ -31,9 +31,12 @@
     function userTurn(){
         let choice = prompt("enter r, p, or s.");
        const letters = ["r","p","s"];
-        if (!letters.includes(choice)) alert("invalid input");
+        if (!letters.includes(choice)){
+             alert("invalid input");
         return userTurn();
     }
+    return choice;
+}
 /*cpuTurn chooses a random number 0-2,returns the associated RPS move.
 *@param:none
     *return:choise
@@ -53,10 +56,17 @@
     function findWinner(u,c){
         let combo = u + c;
         let match = "";
-        let group = 0;
         let winner = "";
-        let winArray = 
-        return "I";
-    }
+        let winArray = [["r","p","I",],["r","s","You"],["s","r","I"],["p","r","You"],["p","s","I"],["s","p","You"]];
+         for( i = 0; i < winArray.length; i++){
+            match = winArray[i][0] + winArray[i][1];
+            if (match==combo){
+              winner = winArray[i][2];  
+            }
+        
+         }
+         return winner;
+        }
+    
 
    
