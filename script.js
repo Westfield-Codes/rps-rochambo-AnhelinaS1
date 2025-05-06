@@ -23,15 +23,40 @@
     let winner = findWinner(u,c);
     alert("You choce "+ u + " and I chose " + c + " so " + winner + " won !");
     }
+     /*userTurn
+    *user can chose r, p, or s .If bad Input, give new choice.
+    *@param:none
+    *return:choise
+    */
     function userTurn(){
-        return "r";
-
+        let choice = prompt("enter r, p, or s.");
+       const letters = ["r","p","s"];
+        if (!letters.includes(choice)) alert("invalid input");
+        return userTurn();
     }
-
+/*cpuTurn chooses a random number 0-2,returns the associated RPS move.
+*@param:none
+    *return:choise
+    */
     function cpuTurn(){
-        return "p";
+    let choice = Math.floor(Math.random()*3);
+    let moves = ["r","p","s"];
+        return moves[choice];
     }
-
-    function findWinner(){
+/* findWinner(u,c)
+*Takes user and computerns turn
+*Decides who is winner is
+*Return winner
+*@param:u,c
+ *return:winner
+ */
+    function findWinner(u,c){
+        let combo = u + c;
+        let match = "";
+        let group = 0;
+        let winner = "";
+        let winArray = 
         return "I";
     }
+
+   
