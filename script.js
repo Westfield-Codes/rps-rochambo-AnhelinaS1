@@ -18,10 +18,10 @@
     while (u==c){
     u = userTurn();
     c = cpuTurn();
-    if (u==c)alert("we both choose"+c);
+    if (u==c)alert("we both choose "+c);
     }
     let winner = findWinner(u,c);
-    alert("You choce "+ u + " and I chose " + c + " so " + winner + " won !");
+    alert("You choce "+ u + " and I chose " + c + ", so " + winner + " won !");
     }
      /*userTurn
     *user can chose r, p, or s .If bad Input, give new choice.
