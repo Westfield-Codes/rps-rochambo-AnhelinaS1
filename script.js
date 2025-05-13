@@ -5,6 +5,11 @@ let score = [0,0];
 function main(){
 let winner = "";
 let rounds = setRounds();
+for (let round = 1; round <= rounds; round ++){
+winner = rpsRound();
+score[winner]++;
+}
+alert ("you have " + score[0] + " and I have  " + score[1]);
 
 }
 
@@ -14,19 +19,28 @@ let rounds = setRounds();
      alert("Must be odd,try again");
     return setRounds();
 }
-  return round;
+  return rounds;
 }
+/*RPS Round
+*Plays a round of RPS and tells the winner.
+*Returns index (0,1) in score for the winner.
+* param: none
+* return: winner (0 or 1)
+*/
     function rpsRound(){
-    let u = "";
-    let c = "";
-    while (u==c){
-        u = userTurn();
-        c = cpuTurn();
-        if (u==c)alert("we both choose "+c);
+        let u = "";
+        let c = "";
+        while (u==c){
+            u = userTurn();
+            c = cpuTurn();
+            if (u==c)alert("we both choose "+c);
+            }
+    winner = findWinner(u,c);
+        alert("You choce "+ u + " and I chose " + c + ", so " + winner + " won !");
+        let winValues = ["You","I"];
+        winner = winValues.indexOf(winner);
+        return winner;
         }
-    let winner = findWinner(u,c);
-    alert("You choce "+ u + " and I chose " + c + ", so " + winner + " won !");
-    }
      /*userTurn
     *user can chose r, p, or s .If bad Input, give new choice.
     *@param:none
