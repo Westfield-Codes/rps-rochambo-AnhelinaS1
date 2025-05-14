@@ -21,7 +21,11 @@ function rpsRound(){
     if (u==c)alert("we both choose "+c);
     }
     let winner = findWinner(u,c);
-    alert("You choce "+ u + " and I chose " + c + ", so " + winner + " won !");
+    let winValues = ["you","I"];
+    winnerWord = winValues[winner];
+    alert("You choce "+ u + " and I chose " + c + ", so " + winnerWord + " won !");
+    return winner;
+
     }
      /*userTurn
     *user can chose r, p, or s .If bad Input, give new choice.
@@ -57,7 +61,7 @@ function rpsRound(){
         let combo = u + c;
         let match = "";
         let winner = "";
-        let winArray = [["r","p","I",],["r","s","You"],["s","r","I"],["p","r","You"],["p","s","I"],["s","p","You"]];
+        let winArray = [["r","p",0,],["r","s",1],["s","r",0],["p","r",1],["p","s",0],["s","p",1]];
          for( i = 0; i < winArray.length; i++){
             match = winArray[i][0] + winArray[i][1];
             if (match==combo){
