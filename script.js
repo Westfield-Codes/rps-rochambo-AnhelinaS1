@@ -2,18 +2,17 @@
 let score = [0,0];
 
 
-function main(){
-let winner = "";
-let rounds = setRounds();
-for (let round = 1; round <= rounds; round ++){
-winner = rpsRound();
-score[winner]++;
-if (score[0] > rounds/2 || score [1] > rounds/2)round = rounds;
-alert (winner + "won!" )
-}
-let gameWinner  = "I";
-if (score [0]>score [1]) gameWinner = "you";
-alert ("you have " + score[0] + " and I have  " + score[1] + "so " + gameWinner + "won.");
+function main() {
+    let winner = "";
+    let rounds = setRounds();
+    for (let round = 1; round <= rounds; round++) {
+        winner = rpsRound();
+        score[winner]++;
+        if (score[0] > rounds/2 || score[1] > rounds / 2) round = rounds;
+    }
+    let gameWinner = "I";
+    if (score[0] > score[1]) gameWinner = "you";
+    alert("you have " + score[0] + " and I have  " + score[1] + " so " + gameWinner + " won.");
 
 }
 
